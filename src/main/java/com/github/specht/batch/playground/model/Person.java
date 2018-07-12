@@ -1,12 +1,16 @@
 package com.github.specht.batch.playground.model;
 
+import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 
 @Entity
+@Builder
 @NoArgsConstructor
+@AllArgsConstructor
 public @Data class Person {
 
     @Id
@@ -19,8 +23,4 @@ public @Data class Person {
     @Column(name = "last_name")
     private String lastName;
 
-    public Person(String firstName, String lastName) {
-        this.firstName = firstName;
-        this.lastName = lastName;
-    }
 }
